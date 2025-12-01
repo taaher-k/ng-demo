@@ -1,1 +1,15 @@
-<p>counter works!</p>
+
+<div class="counter-box">
+  <p>Current Count: **{{ currentCount }}**</p>
+
+  <button 
+    (click)="increment()" 
+    [disabled]="isLimitReached"
+  >
+    Click to Increment
+  </button>
+
+  <p *ngIf="isLimitReached" class="limit-message">
+    Count limit (10) reached!
+  </p>
+</div>
